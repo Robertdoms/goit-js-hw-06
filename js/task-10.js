@@ -3,11 +3,14 @@ function getRandomHexColor() {
 }
 
 const refs = {
-  input: document.querySelector('input'),
-  createBtn: document.querySelector('[data-create]'),
-  destroyBtn: document.querySelector('[data-destroy]'),
-  boxes: document.querySelector('#boxes'),
-  controls: document.querySelector('#controls'),
+  input: document.querySelector("input"),
+  createBtn: document.querySelector("[data-create]"),
+  destroyBtn: document.querySelector("[data-destroy]"),
+  boxes: document.querySelector("#boxes"),
+  controls: document.querySelector("#controls"),
 };
 
-refs.controls.classList.add('item-tt');
+refs.controls.classList.add("item-tt");
+
+refs.createBtn.addEventListener("click", createPaletteItems);
+refs.destroyBtn.addEventListener("click", onDestroyBtnClick);
