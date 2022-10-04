@@ -4,7 +4,7 @@ const refs = {
   inputPass: document.querySelector("input[name-password]"),
 };
 
-console.log(refs.form);
+// console.log(refs.form);
 
 refs.form.addEventListener("submit", onFormSubmit);
 
@@ -17,12 +17,20 @@ function onFormSubmit(event) {
   if (email === "" || password === "") {
     alert("Поле не може бути порожнім");
   }
-  const formData = new FormData(event.currentTarget);
-  console.log(formData);
-  const data = {};
+  //   const formData = new FormData(event.currentTarget);
+  //   console.log(formData);
+  //   const data = {};
 
-  formData.forEach((value, name) => {
-    console.log("email", name);
-    console.log("password", value);
-  });
+  //   formData.forEach((value, name) => {
+  //     console.log('email', name);
+  //     console.log('password', value);
+  //   });
+  else {
+    const formData = {
+      email,
+      password,
+    };
+    console.log(formData);
+    event.currentTarget.reset();
+  }
 }
